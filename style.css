@@ -1,0 +1,31 @@
+body{
+    background: rgb(35, 32, 57);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+#grid{
+   margin-top: 100px;
+   border: 1px solid white;
+   padding: 10px;
+   border-radius: 10px;
+    width: 60vmin;
+    height: 45vmin; /* this is to maintain a square shape background */
+    display: grid;
+   
+    /*setting up the grid, making sure that this is responsive */
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
+    }
+
+#grid img{
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
