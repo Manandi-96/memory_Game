@@ -59,7 +59,7 @@ const gridDisplay= document.querySelector('#grid');
 console.log(gridDisplay)
 
 function createBoard(){
-    for(let i=0;i<10;i++){
+    for(let i=0;i<cardArray.length;i++){
         const card=document.createElement('img');
         
         card.setAttribute('src','img/blank.png');
