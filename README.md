@@ -105,3 +105,28 @@ titles[3].setAttribute('id', 'fourth-title')
 
 To see a created element on the HTML document we should append it to the parent as a child element.
  We can access the HTML document body using document.body. The document.body support the appendChild() method.
+
+ # Event Listeners
+Common HTML events:
+
+onclick, 
+onchange, 
+onmouseover, 
+onmouseout, 
+onkeydown, 
+onkeyup, 
+onload. 
+
+We can add event listener method to any DOM object. 
+We use addEventListener() method to listen different event types on HTML elements.
+The addEventListener() method takes two arguments, an event listener and a callback function.
+
+selectedElement.addEventListener('eventlistner', function(e) {
+  // the activity you want to occur after the event will be in here
+})
+
+// or
+
+selectedElement.addEventListener('eventlistner', e => {
+  // the activity you want to occur after the event will be in here
+})

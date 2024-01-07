@@ -66,7 +66,15 @@ function createBoard(){
         card.setAttribute('data_id',i)
         console.log(card, i)
         gridDisplay.appendChild(card);
+        card.addEventListener('click',flipCard)// here im not calling the function,just taking to the function
     }
 }
 
 createBoard()
+
+//flipping the card
+
+function flipCard(){
+    let cardId= this.getAttribute('data_id');
+    console.log('clicked',cardId)
+}
