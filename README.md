@@ -144,3 +144,7 @@ function sayHello() {
   console.log('Hello')
 }
 setTimeout(sayHello, 2000) // it prints hello after it waits for 2 seconds.
+
+ # removeEventListener() method
+ 
+The removeEventListener() method of the EventTarget interface removes an event listener previously registered with EventTarget.addEventListener() from the target.

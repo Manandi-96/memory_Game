@@ -75,6 +75,7 @@ createBoard()
 //flipping the card
 const cardChosen=[];
 const cardChosenId=[];
+const cardWon=[];
 
 function checkMatch(){
     // selecting all the cards
@@ -91,7 +92,8 @@ function checkMatch(){
         // remove the ability to click on the cards
         cards[cardChosen[0].removeEventListener('click',flipCard)];
         cards[cardChosen[1].removeEventListener('click',flipCard)];
-
+        //check for wins
+        cardWon.push(cardChosen);
 
     }
 }
