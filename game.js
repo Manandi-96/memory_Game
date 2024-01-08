@@ -56,6 +56,7 @@ cardArray.sort(()=>0.5-Math.random())
 console.log(cardArray)
 
 const gridDisplay= document.querySelector('#grid');
+const resultDisplay=document.querySelector('#results');
 console.log(gridDisplay)
 
 function createBoard(){
@@ -93,6 +94,7 @@ function checkMatch(){
 
     if(cardChosen[0]===cardChosen[1]){
         alert('you found a match')
+
         //replacing with a white background if both the images match
         cards[cardChosenId[0]].setAttribute('src', './img/Solid_white.png');
         cards[cardChosenId[1]].setAttribute('src', './img/Solid_white.png');
@@ -109,6 +111,13 @@ function checkMatch(){
         cards[cardChosenId[0].setAttribute('src','./img/blank.png')];
         cards[cardChosenId[1].setAttribute('src','./img/blank.png')];
         alert('Sorry try again')
+    }
+
+    resultDisplay.innerHTML= cardWon.length
+
+    if(cardWon=cardArray.length/2){
+        resultDisplay.innerHTML='congratulations you found them all'
+
     }
     // start the process again
     cardChosen=[];
