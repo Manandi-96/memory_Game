@@ -18,11 +18,11 @@ const cardArray = [
     },
     {
         name: 'img5',
-        img:'./img/img5.jpg'
+        img:'./img/img7.jpg'
     } ,
     {
-        name: 'img5',
-        img:'./img/img5.jpg'
+        name: 'img6',
+        img:'./img/img6.jpg'
     },
     {
         name: 'img1',
@@ -42,11 +42,11 @@ const cardArray = [
     },
     {
         name: 'img5',
-        img:'./img/img5.jpg'
+        img:'./img/img7.jpg'
     } ,
     {
-        name: 'img5',
-        img:'./img/img5.jpg'
+        name: 'img6',
+        img:'./img/img6.jpg'
     }     
 ];
 
@@ -76,15 +76,15 @@ createBoard()
 const cardChosen=[];
 
 function flipCard(){
-    console.log(cardArray);
+
     const cardId= this.getAttribute('data_id');
     console.log('clicked',cardId);
     //name of the card id
     const name=cardArray[cardId].name
-    console.log( cardArray[cardId].name)
     cardChosen.push(name)
-
-    console.log(cardChosen)
     const img= cardArray[cardId].img
     this.setAttribute('src',img)
+
+    // check for a match
+
 }
