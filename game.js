@@ -74,22 +74,40 @@ createBoard()
 
 //flipping the card
 const cardChosen=[];
+const cardChosenId=[];
 
 function checkMatch(){
+    // selecting all the cards
+    const cards= document.querySelectorAll('#grid img')
+    // this gives and array of all the cards inside the grid class
+
+
     console.log('check for a match')
     if(cardChosen[0===cardChosen[1]]){
         alert('you found a match')
+        //replacing with a white background if both the images match
+        cards[cardChosenId[0].setAttribute('src','./img/Solid_white.png')];
+        cards[cardChosenId[1].setAttribute('src','./img/Solid_white.png')]
+
     }
 }
 
 function flipCard(){
+    
 
-    const cardId= this.getAttribute('data_id');// get the id of the element we clicked
-    console.log('clicked',cardId);
+    const cardId= this.getAttribute('data_id');
+    // get the id of the element we clicked
+    //console.log('clicked',cardId);
+
+    // adding the selected ids to an array
+    cardChosenId.push(cardId); 
+
     //name of the card id
     const name=cardArray[cardId].name
     cardChosen.push(name)
+    // img of the card id
     const img= cardArray[cardId].img
+
     this.setAttribute('src',img)
     // setting src name of the img inside 
   
