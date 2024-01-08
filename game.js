@@ -87,7 +87,11 @@ function checkMatch(){
         alert('you found a match')
         //replacing with a white background if both the images match
         cards[cardChosenId[0].setAttribute('src','./img/Solid_white.png')];
-        cards[cardChosenId[1].setAttribute('src','./img/Solid_white.png')]
+        cards[cardChosenId[1].setAttribute('src','./img/Solid_white.png')];
+        // remove the ability to click on the cards
+        cards[cardChosen[0].removeEventListener('click',flipCard)];
+        cards[cardChosen[1].removeEventListener('click',flipCard)];
+
 
     }
 }
@@ -97,7 +101,7 @@ function flipCard(){
 
     const cardId= this.getAttribute('data_id');
     // get the id of the element we clicked
-    //console.log('clicked',cardId);
+    console.log('clicked',cardId);
 
     // adding the selected ids to an array
     cardChosenId.push(cardId); 
