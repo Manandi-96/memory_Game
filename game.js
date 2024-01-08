@@ -73,34 +73,47 @@ function createBoard(){
 createBoard()
 
 //flipping the card
-const cardChosen=[];
-const cardChosenId=[];
-const cardWon=[];
+let cardChosen=[];
+let cardChosenId=[];
+let cardWon=[];
 
 function checkMatch(){
     // selecting all the cards
     const cards= document.querySelectorAll('#grid img')
     // this gives and array of all the cards inside the grid class
-
+    
+    // if click on the same card
+    if(cardChosenId[0]===cardChosenId[1]){
+        alert('you clicked the same card Homie')
+    }
 
     console.log('check for a match')
+
+    // if click on a match
+
     if(cardChosen[0===cardChosen[1]]){
         alert('you found a match')
         //replacing with a white background if both the images match
         cards[cardChosenId[0].setAttribute('src','./img/Solid_white.png')];
         cards[cardChosenId[1].setAttribute('src','./img/Solid_white.png')];
         // remove the ability to click on the cards
-        cards[cardChosen[0].removeEventListener('click',flipCard)];
-        cards[cardChosen[1].removeEventListener('click',flipCard)];
+        cards[cardChosenId[0].removeEventListener('click',flipCard)];
+        cards[cardChosenId[1].removeEventListener('click',flipCard)];
         //check for wins
         cardWon.push(cardChosen);
-
     }
+    //if no march
+    else{
+        cards[cardChosenId[0].setAttribute('src','./img/blank.png')];
+        cards[cardChosenId[1].setAttribute('src','./img/blank.png')];
+    }
+    // start the process again
+    cardChosen=[];
+    cardChosenId=[];
+
 }
 
 function flipCard(){
-    
-
     const cardId= this.getAttribute('data_id');
     // get the id of the element we clicked
     console.log('clicked',cardId);
