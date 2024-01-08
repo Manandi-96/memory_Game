@@ -75,16 +75,28 @@ createBoard()
 //flipping the card
 const cardChosen=[];
 
+function checkMatch(){
+    console.log('check for a match')
+    if(cardChosen[0===cardChosen[1]]){
+        alert('you found a match')
+    }
+}
+
 function flipCard(){
 
-    const cardId= this.getAttribute('data_id');
+    const cardId= this.getAttribute('data_id');// get the id of the element we clicked
     console.log('clicked',cardId);
     //name of the card id
     const name=cardArray[cardId].name
     cardChosen.push(name)
     const img= cardArray[cardId].img
     this.setAttribute('src',img)
-
+    // setting src name of the img inside 
+  
     // check for a match
+    if(cardChosen.length===2){
+        setTimeout(checkMatch,500)
+    }
+
 
 }
