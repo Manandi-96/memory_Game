@@ -91,14 +91,16 @@ function checkMatch(){
 
     // if click on a match
 
-    if(cardChosen[0===cardChosen[1]]){
+    if(cardChosen[0]===cardChosen[1]){
         alert('you found a match')
         //replacing with a white background if both the images match
-        cards[cardChosenId[0].setAttribute('src','./img/Solid_white.png')];
-        cards[cardChosenId[1].setAttribute('src','./img/Solid_white.png')];
+        cards[cardChosenId[0]].setAttribute('src', './img/Solid_white.png');
+        cards[cardChosenId[1]].setAttribute('src', './img/Solid_white.png');
+        
         // remove the ability to click on the cards
-        cards[cardChosenId[0].removeEventListener('click',flipCard)];
-        cards[cardChosenId[1].removeEventListener('click',flipCard)];
+        cards[cardChosenId[0]].removeEventListener('click', flipCard);
+        cards[cardChosenId[1]].removeEventListener('click', flipCard);
+
         //check for wins
         cardWon.push(cardChosen);
     }
@@ -106,6 +108,7 @@ function checkMatch(){
     else{
         cards[cardChosenId[0].setAttribute('src','./img/blank.png')];
         cards[cardChosenId[1].setAttribute('src','./img/blank.png')];
+        alert('Sorry try again')
     }
     // start the process again
     cardChosen=[];
