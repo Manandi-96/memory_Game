@@ -62,7 +62,7 @@ console.log(gridDisplay)
 function createBoard(){
     for(let i=0;i<cardArray.length;i++){
         const card=document.createElement('img');
-        
+
         card.setAttribute('src','img/blank.png');
         card.setAttribute('data_id',i)
         console.log(card, i)
@@ -105,6 +105,11 @@ function checkMatch(){
 
         //check for wins
         cardWon.push(cardChosen);
+
+        // if(cardWon=cardArray.length/2){
+        //     resultDisplay.innerHTML='congratulations you found them all'
+    
+        // }
     }
     //if no march
     else{
